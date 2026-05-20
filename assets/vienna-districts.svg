@@ -1,0 +1,121 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" class="vienna-map" aria-label="Wiener Gemeindebezirke — ÖFS betreut alle 23 Bezirke">
+  <defs>
+    <filter id="glow"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <radialGradient id="danube"><stop offset="0%" stop-color="rgba(26,95,168,.10)"/><stop offset="100%" stop-color="rgba(26,95,168,.02)"/></radialGradient>
+    <linearGradient id="cityGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(26,95,168,.28)"/><stop offset="100%" stop-color="rgba(26,95,168,.10)"/></linearGradient>
+  </defs>
+  <style>
+    .district { fill: rgba(26,95,168,.14); stroke: rgba(26,95,168,.30); stroke-width: .7; cursor: pointer; transition: fill .25s, stroke .25s }
+    .district:hover { fill: rgba(26,95,168,.35); stroke: rgba(26,95,168,.65); stroke-width: 1.2 }
+    .district.active { fill: rgba(26,95,168,.45); stroke: rgba(26,95,168,.80); stroke-width: 1.2; filter: url(#glow) }
+    .label { fill: rgba(255,255,255,.42); font-family: 'Space Grotesk','DM Sans',sans-serif; font-size: 7px; font-weight: 600; letter-spacing: .04em; pointer-events: none; user-select: none }
+    .title { fill: rgba(255,255,255,.12); font-family: 'Space Grotesk','DM Sans',sans-serif; font-size: 8px; letter-spacing: .10em; text-anchor: middle }
+    .legend-text { fill: rgba(255,255,255,.55); font-family: 'Space Grotesk','DM Sans',sans-serif; font-size: 9px; font-weight: 500 }
+  </style>
+
+  <!-- Danube -->
+  <path d="M40,185 Q120,168 200,175 Q300,162 400,155 Q520,148 600,150 Q680,155 760,160 L760,190 Q680,185 600,180 Q500,172 400,168 Q300,175 200,185 Q120,195 40,200 Z" fill="url(#danube)"/>
+  <text x="400" y="180" class="title" style="fill:rgba(255,255,255,.12)">D O N A U</text>
+
+  <!-- District 1: Innere Stadt (center) -->
+  <path d="M385,310 L395,300 L410,298 L425,305 L430,320 L425,335 L410,342 L395,340 L382,330 Z" class="district" data-bezirk="1" data-name="Innere Stadt"/>
+  <text x="406" y="324" class="label">1</text>
+
+  <!-- District 2: Leopoldstadt (NE of 1, across canal) -->
+  <path d="M410,270 L450,260 L490,265 L510,280 L510,300 L490,310 L450,312 L425,308 L410,295 Z" class="district" data-bezirk="2" data-name="Leopoldstadt"/>
+  <text x="460" y="289" class="label">2</text>
+
+  <!-- District 3: Landstraße (SE of 1) -->
+  <path d="M385,340 L410,342 L425,335 L440,345 L450,365 L445,385 L425,395 L400,390 L382,375 L378,355 Z" class="district" data-bezirk="3" data-name="Landstraße"/>
+  <text x="413" y="368" class="label">3</text>
+
+  <!-- District 4: Wieden (S of 1) -->
+  <path d="M370,340 L385,340 L382,355 L378,375 L365,380 L348,375 L340,358 L350,342 Z" class="district" data-bezirk="4" data-name="Wieden"/>
+  <text x="363" y="361" class="label">4</text>
+
+  <!-- District 5: Margareten (SW of 4) -->
+  <path d="M340,358 L365,380 L360,395 L348,402 L330,395 L318,380 L325,362 Z" class="district" data-bezirk="5" data-name="Margareten"/>
+  <text x="342" y="380" class="label">5</text>
+
+  <!-- District 6: Mariahilf (W of 5) -->
+  <path d="M318,340 L340,358 L325,362 L318,380 L305,385 L290,372 L285,352 L298,338 Z" class="district" data-bezirk="6" data-name="Mariahilf"/>
+  <text x="312" y="361" class="label">6</text>
+
+  <!-- District 7: Neubau (W of 6) -->
+  <path d="M290,325 L310,338 L298,338 L285,352 L270,355 L258,342 L262,325 L280,318 Z" class="district" data-bezirk="7" data-name="Neubau"/>
+  <text x="284" y="340" class="label">7</text>
+
+  <!-- District 8: Josefstadt (NW of 1) -->
+  <path d="M360,295 L382,300 L385,310 L370,320 L352,318 L342,305 L348,292 Z" class="district" data-bezirk="8" data-name="Josefstadt"/>
+  <text x="364" y="308" class="label">8</text>
+
+  <!-- District 9: Alsergrund (N of 8) -->
+  <path d="M348,258 L370,265 L382,275 L382,300 L360,295 L348,292 L338,280 L340,265 Z" class="district" data-bezirk="9" data-name="Alsergrund"/>
+  <text x="362" y="280" class="label">9</text>
+
+  <!-- District 10: Favoriten (S) -->
+  <path d="M348,402 L375,400 L395,405 L420,415 L435,435 L425,460 L405,472 L375,470 L345,460 L325,440 L330,415 Z" class="district" data-bezirk="10" data-name="Favoriten"/>
+  <text x="380" y="440" class="label">10</text>
+
+  <!-- District 11: Simmering (SE) -->
+  <path d="M435,360 L460,365 L480,375 L500,390 L510,410 L495,435 L470,440 L445,435 L425,430 L430,405 L435,385 Z" class="district" data-bezirk="11" data-name="Simmering"/>
+  <text x="468" y="405" class="label">11</text>
+
+  <!-- District 12: Meidling (SW) -->
+  <path d="M290,372 L305,385 L318,380 L330,395 L325,420 L310,440 L290,445 L268,435 L255,415 L265,392 Z" class="district" data-bezirk="12" data-name="Meidling"/>
+  <text x="292" y="412" class="label">12</text>
+
+  <!-- District 13: Hietzing (W) -->
+  <path d="M205,330 L240,325 L265,338 L290,340 L270,355 L258,372 L240,385 L215,390 L190,378 L180,355 L190,340 Z" class="district" data-bezirk="13" data-name="Hietzing"/>
+  <text x="235" y="358" class="label">13</text>
+
+  <!-- District 14: Penzing (NW) -->
+  <path d="M160,290 L195,285 L220,300 L240,320 L220,330 L205,325 L190,338 L170,335 L152,320 L148,302 Z" class="district" data-bezirk="14" data-name="Penzing"/>
+  <text x="195" y="312" class="label">14</text>
+
+  <!-- District 15: Rudolfsheim-Fünfhaus (W of 7) -->
+  <path d="M258,295 L280,318 L262,325 L258,342 L240,338 L230,325 L238,305 Z" class="district" data-bezirk="15" data-name="Rudolfsheim"/>
+  <text x="258" y="322" class="label">15</text>
+
+  <!-- District 16: Ottakring (W of 17) -->
+  <path d="M200,248 L240,250 L265,270 L258,295 L238,305 L218,298 L195,285 L190,265 Z" class="district" data-bezirk="16" data-name="Ottakring"/>
+  <text x="228" y="278" class="label">16</text>
+
+  <!-- District 17: Hernals (NW of 9) -->
+  <path d="M265,230 L300,238 L320,252 L348,258 L340,265 L320,270 L295,272 L270,268 L258,255 Z" class="district" data-bezirk="17" data-name="Hernals"/>
+  <text x="305" y="255" class="label">17</text>
+
+  <!-- District 18: Währing (N of 9) -->
+  <path d="M320,215 L350,225 L370,238 L382,252 L382,275 L370,265 L348,258 L338,246 L328,235 Z" class="district" data-bezirk="18" data-name="Währing"/>
+  <text x="358" y="250" class="label">18</text>
+
+  <!-- District 19: Döbling (N, large) -->
+  <path d="M280,155 L340,155 L380,168 L410,180 L430,200 L420,220 L395,235 L370,238 L350,225 L320,215 L280,210 L250,210 L235,200 L240,180 L260,165 Z" class="district" data-bezirk="19" data-name="Döbling"/>
+  <text x="335" y="195" class="label">19</text>
+
+  <!-- District 20: Brigittenau (N of 2) -->
+  <path d="M370,238 L395,235 L410,245 L425,255 L430,270 L410,270 L385,265 L370,252 Z" class="district" data-bezirk="20" data-name="Brigittenau"/>
+  <text x="398" y="253" class="label">20</text>
+
+  <!-- District 21: Floridsdorf (NE, large) -->
+  <path d="M370,100 L440,95 L500,108 L545,125 L570,150 L560,170 L540,180 L510,185 L480,180 L430,185 L395,178 L370,160 L355,140 L360,120 Z" class="district" data-bezirk="21" data-name="Floridsdorf"/>
+  <text x="470" y="145" class="label">21</text>
+
+  <!-- District 22: Donaustadt (E, large) -->
+  <path d="M480,180 L540,185 L590,195 L640,210 L670,235 L680,265 L670,295 L650,315 L620,325 L590,320 L560,305 L530,290 L500,280 L475,270 L460,255 L455,235 L460,210 Z" class="district" data-bezirk="22" data-name="Donaustadt"/>
+  <text x="565" y="260" class="label">22</text>
+
+  <!-- District 23: Liesing (S, large) -->
+  <path d="M180,355 L215,390 L255,415 L290,445 L310,440 L325,420 L330,440 L345,460 L375,470 L405,472 L425,460 L420,490 L395,510 L360,520 L310,525 L260,518 L220,500 L190,475 L170,440 L165,405 L175,375 Z" class="district" data-bezirk="23" data-name="Liesing"/>
+  <text x="290" y="480" class="label">23</text>
+
+  <!-- Center marker -->
+  <circle cx="395" cy="320" r="2.5" fill="rgba(26,95,168,.45)" class="district active"/>
+  <circle cx="395" cy="320" r="6" fill="none" stroke="rgba(26,95,168,.25)" stroke-width=".5"/>
+
+  <!-- Legend -->
+  <rect x="590" y="518" width="185" height="60" rx="7" fill="rgba(13,13,13,.82)" stroke="rgba(255,255,255,.06)"/>
+  <rect x="604" y="535" width="16" height="16" rx="3" fill="rgba(26,95,168,.22)" stroke="rgba(26,95,168,.40)"/>
+  <text x="628" y="546" class="legend-text">ÖFS betreut alle 23 Bezirke</text>
+  <text x="604" y="566" fill="rgba(255,255,255,.30)" font-family="'Space Grotesk','DM Sans',sans-serif" font-size="7" letter-spacing=".06em">Meisterbetrieb seit 2006 · eigenes Team</text>
+</svg>

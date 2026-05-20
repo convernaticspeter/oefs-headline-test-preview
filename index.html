@@ -146,6 +146,16 @@
     .section-dark .stat-num{color:#fff}
     .section-dark .stat-label{color:rgba(255,255,255,.56)}
 
+    /* ── District Map ── */
+    .map-section{background:var(--charcoal);padding:clamp(64px,8vw,100px) 0}
+    .map-section h2{color:#fff}
+    .map-section .lede{color:rgba(255,255,255,.64)}
+    .map-section .section-num{color:rgba(255,255,255,.18)}
+    .map-wrap{position:relative;margin-top:28px;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .map-wrap svg{width:100%;height:auto;display:block}
+    .map-tooltip{position:absolute;pointer-events:none;background:rgba(13,13,13,.94);color:#fff;padding:6px 12px;border-radius:5px;font-family:"Space Grotesk","DM Sans",sans-serif;font-size:12px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;opacity:0;transition:opacity .15s;border:1px solid rgba(255,255,255,.10)}
+    .map-wrap:hover .map-tooltip.has-name{opacity:1}
+
     /* ── Form ── */
     .form-section{padding:clamp(64px,8vw,100px) 0;background:var(--charcoal);color:#fff}
     .form-section h2{color:#fff}
@@ -204,6 +214,7 @@
       <a href="#problem">Problem</a>
       <a href="#system">System</a>
       <a href="#referenzen">Referenzen</a>
+      <a href="#einzugsgebiet">Einzugsgebiet</a>
     </div>
     <a class="nav-cta" href="#anfrage">Probereinigung anfragen</a>
   </div>
@@ -352,6 +363,21 @@
     </div>
   </section>
 
+  <!-- District Map -->
+  <section class="map-section" id="einzugsgebiet">
+    <div class="shell"><span class="section-num" style="color:rgba(255,255,255,.18)">05</span>
+      <div class="kicker" style="color:rgba(255,255,255,.58)">Einzugsgebiet</div>
+      <h2>In allen 23 Wiener Bezirken<br>im Einsatz.</h2>
+      <p class="lede">Vom 1. Bezirk bis nach Liesing — ÖFS betreut gewerbliche Objekte in ganz Wien. Mit eigener Disposition, kurzen Anfahrtswegen und fixen Teams pro Gebiet.</p>
+      <div class="map-wrap">
+        <img src="assets/vienna-districts.svg" alt="Karte der 23 Wiener Gemeindebezirke" style="width:100%;height:auto;display:block" onerror="this.style.display='none'">
+        <object data="assets/vienna-districts.svg" type="image/svg+xml" style="width:100%;height:auto;display:block" aria-label="Interaktive Karte der 23 Wiener Bezirke">
+          <img src="assets/vienna-districts.svg" alt="Karte der 23 Wiener Gemeindebezirke" style="width:100%;height:auto;display:block">
+        </object>
+      </div>
+    </div>
+  </section>
+
   <!-- Full-width image band 2 -->
   <div class="img-band">
     <img src="assets/oefs-conference-ready.webp" alt="" loading="lazy">
@@ -362,7 +388,7 @@
 
   <!-- Form -->
   <section class="form-section" id="anfrage">
-    <div class="shell"><span class="section-num" style="color:rgba(255,255,255,.18)">05</span>
+    <div class="shell"><span class="section-num" style="color:rgba(255,255,255,.18)">06</span>
       <div class="kicker" style="color:rgba(255,255,255,.58)">Nächster Schritt</div>
       <h2>Passt ÖFS zu Ihrem Objekt?</h2>
       <p class="lede">Starten Sie mit einer Probereinigung. Die konkrete Durchführung stimmen wir individuell mit Ihnen ab. Rückmeldung innerhalb von 24 Stunden.</p>
