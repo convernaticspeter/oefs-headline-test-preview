@@ -146,15 +146,40 @@
     .section-dark .stat-num{color:#fff}
     .section-dark .stat-label{color:rgba(255,255,255,.56)}
 
-    /* ── District Map ── */
-    .map-section{background:var(--charcoal);padding:clamp(64px,8vw,100px) 0}
-    .map-section h2{color:#fff}
-    .map-section .lede{color:rgba(255,255,255,.64)}
+    /* ── Service area ── */
+    .map-section{background:var(--charcoal);padding:clamp(70px,9vw,110px) 0;color:#fff;overflow:hidden}
+    .map-section h2{color:#fff;max-width:660px}
+    .map-section .lede{color:rgba(255,255,255,.66)}
     .map-section .section-num{color:rgba(255,255,255,.18)}
-    .map-wrap{position:relative;margin-top:28px;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
-    .map-wrap svg{width:100%;height:auto;display:block}
-    .map-tooltip{position:absolute;pointer-events:none;background:rgba(13,13,13,.94);color:#fff;padding:6px 12px;border-radius:5px;font-family:"Space Grotesk","DM Sans",sans-serif;font-size:12px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;opacity:0;transition:opacity .15s;border:1px solid rgba(255,255,255,.10)}
-    .map-wrap:hover .map-tooltip.has-name{opacity:1}
+    .area-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);gap:clamp(32px,5vw,68px);align-items:start;margin-top:34px}
+    .area-copy{display:grid;gap:22px}
+    .area-points{display:grid;gap:12px;margin-top:4px}
+    .area-point{display:grid;grid-template-columns:34px minmax(0,1fr);gap:13px;align-items:start;padding:16px 0;border-top:1px solid rgba(255,255,255,.10)}
+    .area-point:first-child{border-top:0;padding-top:0}
+    .area-icon{width:34px;height:34px;border-radius:7px;background:rgba(26,95,168,.22);border:1px solid rgba(69,141,212,.24);display:grid;place-items:center;font:600 13px/1 "Space Grotesk","DM Sans",sans-serif;color:#9fc7ef}
+    .area-point strong{display:block;font-family:"Space Grotesk","DM Sans",sans-serif;font-size:17px;line-height:1.2;letter-spacing:-.015em;color:#fff;margin-bottom:3px}
+    .area-point span{display:block;color:rgba(255,255,255,.58);font-size:15px;line-height:1.48}
+    .area-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
+    .area-actions .micro{font-size:13px;color:rgba(255,255,255,.44)}
+    .coverage-card{position:relative;border:1px solid rgba(255,255,255,.10);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.028));border-radius:14px;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.22)}
+    .coverage-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:22px clamp(18px,2.8vw,28px);border-bottom:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.12)}
+    .coverage-title{font-family:"Space Grotesk","DM Sans",sans-serif;font-size:18px;font-weight:600;letter-spacing:-.02em;color:#fff}
+    .coverage-sub{font-size:13px;color:rgba(255,255,255,.58);margin-top:3px}
+    .coverage-status{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font:600 12px/1 "Space Grotesk","DM Sans",sans-serif;color:#b9d8f6;background:rgba(26,95,168,.18);border:1px solid rgba(96,160,224,.22);border-radius:999px;padding:8px 10px}
+    .coverage-status::before{content:"";width:7px;height:7px;border-radius:50%;background:#70b8ff;box-shadow:0 0 0 4px rgba(112,184,255,.12)}
+    .vienna-plan{position:relative;min-height:430px;padding:26px;background:radial-gradient(circle at 64% 32%,rgba(26,95,168,.22),transparent 30%),linear-gradient(180deg,rgba(238,240,243,.045),rgba(238,240,243,.015))}
+    .vienna-plan svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 34px rgba(0,0,0,.20))}
+    .zone-shape{fill:rgba(238,240,243,.075);stroke:rgba(255,255,255,.18);stroke-width:2;transition:fill .18s,stroke .18s,transform .18s;transform-origin:center}
+    .zone-link{cursor:pointer;outline:none;text-decoration:none}
+    .zone-link:focus .zone-shape,.zone-link:hover .zone-shape{fill:rgba(26,95,168,.26);stroke:rgba(137,193,248,.72);transform:translateY(-2px)}
+    .zone-text{font-family:"Space Grotesk","DM Sans",sans-serif;font-weight:600;font-size:13px;fill:rgba(255,255,255,.86);letter-spacing:-.01em;pointer-events:none}
+    .zone-small{font-family:"DM Sans",sans-serif;font-size:10.5px;fill:rgba(255,255,255,.58);pointer-events:none}
+    .donau-line{fill:none;stroke:#75b9ff;stroke-width:14;stroke-linecap:round;opacity:.46}
+    .ring-line{fill:none;stroke:rgba(255,255,255,.26);stroke-width:2;stroke-dasharray:6 8}
+    .base-label{font:600 11px/1 "Space Grotesk","DM Sans",sans-serif;fill:#b9d8f6;letter-spacing:.08em;text-transform:uppercase}
+    .coverage-legend{display:flex;gap:10px;flex-wrap:wrap;padding:0 26px 24px}
+    .district-chip{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);border-radius:999px;padding:7px 11px;font-size:13px;line-height:1;color:rgba(255,255,255,.76);white-space:nowrap}
+    .district-chip.primary{background:rgba(26,95,168,.22);border-color:rgba(114,177,241,.28);color:#d7ebff}
 
     /* ── Form ── */
     .form-section{padding:clamp(64px,8vw,100px) 0;background:var(--charcoal);color:#fff}
@@ -198,6 +223,13 @@
       .card-img{height:180px}
       .compare-wrap{grid-template-columns:1fr}
       .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .area-grid{grid-template-columns:1fr;gap:26px;margin-top:28px}
+      .coverage-head{flex-direction:column;gap:10px}
+      .coverage-status{align-self:flex-start}
+      .vienna-plan{min-height:0;padding:16px}
+      .coverage-legend{padding:0 16px 18px;gap:8px}
+      .district-chip{font-size:12px;padding:7px 9px}
+      .area-actions .btn{width:100%}
       .form-grid{grid-template-columns:1fr}
       .btn.submit{width:100%;justify-self:stretch;text-align:center}
       .section-num{font-size:clamp(36px,10vw,48px)}
@@ -363,16 +395,77 @@
     </div>
   </section>
 
-  <!-- District Map -->
+  <!-- Service area -->
   <section class="map-section" id="einzugsgebiet">
-    <div class="shell"><span class="section-num" style="color:rgba(255,255,255,.18)">05</span>
+    <div class="shell"><span class="section-num">05</span>
       <div class="kicker" style="color:rgba(255,255,255,.58)">Einzugsgebiet</div>
-      <h2>In allen 23 Wiener Bezirken<br>im Einsatz.</h2>
-      <p class="lede">Vom 1. Bezirk bis nach Liesing — ÖFS betreut gewerbliche Objekte in ganz Wien. Mit eigener Disposition, kurzen Anfahrtswegen und fixen Teams pro Gebiet.</p>
-      <div class="map-wrap">
-        <object data="assets/vienna-districts.svg" type="image/svg+xml" style="width:100%;height:auto;display:block" aria-label="Interaktive Karte der 23 Wiener Bezirke — alle Bezirke anklickbar">
-          <img src="assets/vienna-districts.svg" alt="Karte der 23 Wiener Gemeindebezirke" style="width:100%;height:auto;display:block">
-        </object>
+      <h2>Wien wird nicht „mitbetreut“. Wien ist eingeplant.</h2>
+      <p class="lede">ÖFS betreut gewerbliche Objekte in allen 23 Bezirken — mit fixer Objektleitung, geregelter Vertretung und Touren, die nicht jeden Einsatz neu improvisieren.</p>
+
+      <div class="area-grid">
+        <div class="area-copy">
+          <div class="area-points" aria-label="Betreuung in Wien">
+            <div class="area-point">
+              <div class="area-icon">01</div>
+              <div><strong>Fixe Zuständigkeit pro Objekt</strong><span>Ihr Objekt bekommt eine verantwortliche Objektleitung — nicht jedes Mal einen neuen Ansprechpartner.</span></div>
+            </div>
+            <div class="area-point">
+              <div class="area-icon">02</div>
+              <div><strong>Touren nach Bezirkslage</strong><span>Innere Bezirke, Gürtel, Donauachse und südliche Gewerbelagen werden getrennt geplant, damit Anfahrten und Vertretung realistisch bleiben.</span></div>
+            </div>
+            <div class="area-point">
+              <div class="area-icon">03</div>
+              <div><strong>Auch Randlagen sauber geregelt</strong><span>Liesing, Donaustadt oder Floridsdorf werden nicht „irgendwie“ angehängt — Zeiten, Schlüssel und Vertretung werden vor Start festgelegt.</span></div>
+            </div>
+          </div>
+          <div class="area-actions">
+            <a class="btn primary" href="#anfrage">Probereinigung anfragen</a>
+            <span class="micro">Für Büros, Praxen, Kanzleien, Lager und gewerbliche Flächen.</span>
+          </div>
+        </div>
+
+        <aside class="coverage-card" aria-label="ÖFS Einsatzplan Wien">
+          <div class="coverage-head">
+            <div>
+              <div class="coverage-title">Einsatzplan Wien</div>
+              <div class="coverage-sub">23 Bezirke · gewerbliche Objekte · fixe Teams</div>
+            </div>
+            <div class="coverage-status">aktiv betreut</div>
+          </div>
+          <div class="vienna-plan">
+            <svg viewBox="0 0 640 430" role="img" aria-labelledby="viennaPlanTitle viennaPlanDesc" xmlns="http://www.w3.org/2000/svg">
+              <title id="viennaPlanTitle">Schematischer Einsatzplan für Wien</title>
+              <desc id="viennaPlanDesc">Vier Einsatzzonen rund um Innenstadt, Gürtel, Donau und südliche Gewerbelagen.</desc>
+              <path class="donau-line" d="M36 138 C142 88 214 105 297 147 C380 188 462 178 604 112"/>
+              <path class="ring-line" d="M280 158 C344 139 407 166 432 226 C457 286 424 344 357 360 C288 376 224 345 204 286 C184 225 216 177 280 158Z"/>
+              <a class="zone-link" href="#anfrage" aria-label="Innere Bezirke betreuen lassen">
+                <path class="zone-shape" d="M286 173 C338 158 389 177 408 224 C427 271 401 320 350 332 C296 346 245 320 231 271 C216 222 238 188 286 173Z"/>
+                <text class="zone-text" x="319" y="239" text-anchor="middle">Innenstadt & Gürtel</text>
+                <text class="zone-small" x="319" y="258" text-anchor="middle">1.–9. Bezirk</text>
+              </a>
+              <a class="zone-link" href="#anfrage" aria-label="Wien West und Süd betreuen lassen">
+                <path class="zone-shape" d="M96 206 C150 162 220 157 262 196 C226 234 216 287 240 336 C184 371 116 356 76 308 C47 272 56 237 96 206Z"/>
+                <text class="zone-text" x="152" y="257" text-anchor="middle">West & Süd</text>
+                <text class="zone-small" x="152" y="276" text-anchor="middle">10.–19. Bezirk</text>
+              </a>
+              <a class="zone-link" href="#anfrage" aria-label="Wien Nord und Donau betreuen lassen">
+                <path class="zone-shape" d="M374 92 C443 61 533 68 590 125 C546 152 486 178 432 207 C413 171 391 131 374 92Z"/>
+                <text class="zone-text" x="496" y="124" text-anchor="middle">Nord / Donau</text>
+                <text class="zone-small" x="496" y="143" text-anchor="middle">20.–22. Bezirk</text>
+              </a>
+              <a class="zone-link" href="#anfrage" aria-label="Wien Südost und Gewerbelagen betreuen lassen">
+                <path class="zone-shape" d="M392 262 C453 245 542 260 602 318 C560 382 471 400 400 364 C423 331 423 296 392 262Z"/>
+                <text class="zone-text" x="501" y="321" text-anchor="middle">Südost</text>
+                <text class="zone-small" x="501" y="340" text-anchor="middle">11. · 23. Bezirk</text>
+              </a>
+              <text class="base-label" x="42" y="118">Donauachse</text>
+              <text class="base-label" x="256" y="383">fixe Objektleitung je Standort</text>
+            </svg>
+          </div>
+          <div class="coverage-legend" aria-label="Ausgewählte Bezirke">
+            <span class="district-chip primary">Innere Stadt</span><span class="district-chip primary">Leopoldstadt</span><span class="district-chip">Landstraße</span><span class="district-chip">Wieden</span><span class="district-chip">Margareten</span><span class="district-chip">Mariahilf</span><span class="district-chip">Neubau</span><span class="district-chip">Josefstadt</span><span class="district-chip">Alsergrund</span><span class="district-chip">Favoriten</span><span class="district-chip">Simmering</span><span class="district-chip">Meidling</span><span class="district-chip">Hietzing</span><span class="district-chip">Penzing</span><span class="district-chip">Rudolfsheim</span><span class="district-chip">Ottakring</span><span class="district-chip">Hernals</span><span class="district-chip">Währing</span><span class="district-chip">Döbling</span><span class="district-chip">Brigittenau</span><span class="district-chip">Floridsdorf</span><span class="district-chip">Donaustadt</span><span class="district-chip">Liesing</span>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
