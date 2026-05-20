@@ -172,13 +172,9 @@
     .map-paper{fill:rgba(8,10,12,.20);stroke:rgba(255,255,255,.10)}
     .district-link{cursor:pointer;outline:none;text-decoration:none}
     .district-path{fill:rgba(238,240,243,.13);stroke:rgba(255,255,255,.42);stroke-width:1.2;vector-effect:non-scaling-stroke;transition:fill .16s,stroke .16s,filter .16s}
-    .district-path.core{fill:rgba(26,95,168,.34)}
-    .district-path.north{fill:rgba(26,95,168,.23)}
-    .district-path.south{fill:rgba(238,240,243,.16)}
-    .district-path.west{fill:rgba(238,240,243,.12)}
+    .district-path.core,.district-path.north,.district-path.south,.district-path.west{fill:rgba(26,95,168,.34)}
     .district-link:hover .district-path,.district-link:focus .district-path{fill:rgba(112,184,255,.38);stroke:#b9d8f6;filter:drop-shadow(0 0 10px rgba(112,184,255,.18))}
     .district-num{font:700 10px/1 "Space Grotesk","DM Sans",sans-serif;fill:rgba(255,255,255,.88);paint-order:stroke;stroke:rgba(0,0,0,.38);stroke-width:2.5px;pointer-events:none}
-    .map-donau{fill:none;stroke:#75b9ff;stroke-width:8;stroke-linecap:round;opacity:.42;mix-blend-mode:screen;pointer-events:none}
     .map-note{font:600 12px/1 "DM Sans",sans-serif;fill:rgba(255,255,255,.54)}
     .coverage-legend{display:flex;gap:8px;flex-wrap:wrap;padding:0 24px 24px;overflow:visible;scrollbar-width:thin}
     .district-chip{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);border-radius:999px;padding:7px 11px;font-size:13px;line-height:1;color:rgba(255,255,255,.76);white-space:nowrap}
@@ -274,7 +270,7 @@
       </div>
     </div>
     <div class="hero-visual-col">
-      <img src="assets/hero-office-cleaning.webp" alt="ÖFS Reinigungskraft in einem hellen, modernen Büro" loading="eager" fetchpriority="high" decoding="async">
+      <img src="assets/oefs-hero-smile.webp" alt="ÖFS Reinigungskraft in einem hellen, modernen Büro" loading="eager" fetchpriority="high" decoding="async">
     </div>
   </div>
 </header>
@@ -320,14 +316,14 @@
             </div>
           </div>
         </div>
-        <div class="pair-image"><img src="assets/oefs-office-detail.webp" alt="Professionell gereinigter Büroarbeitsplatz" loading="lazy"></div>
+        <div class="pair-image"><img src="assets/oefs-coworking-clean.webp" alt="Professionell gereinigter Büroarbeitsplatz" loading="lazy"></div>
       </div>
     </div>
   </section>
 
   <!-- Full-width image band -->
   <div class="img-band">
-    <img src="assets/oefs-wide-office.webp" alt="" loading="lazy">
+    <img src="assets/oefs-reception-clean.webp" alt="" loading="lazy">
     <div class="band-overlay">
       <p class="band-quote">„Reinigung soll ein gelöstes Thema sein.<br>Kein wöchentlicher Tagesordnungspunkt.“<span>ÖFS Facility Service</span></p>
     </div>
@@ -341,15 +337,15 @@
       <p class="lede">Bevor ÖFS Ihr Objekt übernimmt, legen wir fest: Wer ist zuständig? Wie ist die Vertretung organisiert? Was passiert bei einer Reklamation? Erst danach folgt die Probereinigung.</p>
       <div class="cards-3">
         <article class="card">
-          <div class="card-img"><img src="assets/oefs-objektleiter.webp" alt=""></div>
+          <div class="card-img"><img src="assets/oefs-objektleiter-wide.webp" alt=""></div>
           <div class="card-body"><div class="card-num">A</div><h3>Feste Objektleitung</h3><p>Ein Name, eine Nummer, eine verantwortliche Person. Keine anonyme Hotline — Ihr Ansprechpartner kennt Ihr Objekt.</p></div>
         </article>
         <article class="card">
-          <div class="card-img"><img src="assets/oefs-team-handover.webp" alt=""></div>
+          <div class="card-img"><img src="assets/oefs-team-natural.webp" alt=""></div>
           <div class="card-body"><div class="card-num">B</div><h3>Eigenes Team mit Vertretung</h3><p>Geschulte Mitarbeiter und geregelte Vertretung. Ihr Objekt muss nicht jede Woche neu erklärt werden.</p></div>
         </article>
         <article class="card">
-          <div class="card-img"><img src="assets/oefs-active-cleaning.webp" alt=""></div>
+          <div class="card-img"><img src="assets/oefs-cleaning-windows.webp" alt=""></div>
           <div class="card-body"><div class="card-num">C</div><h3>Probereinigung vor Bindung</h3><p>Sie sehen zuerst, wie ÖFS arbeitet. Danach entscheiden Sie, ob die laufende Betreuung zu Ihrem Objekt passt.</p></div>
         </article>
       </div>
@@ -490,12 +486,11 @@
     <text class="district-num" x="477.5" y="277.9" text-anchor="middle">22</text>
     <text class="district-num" x="193.4" y="439.0" text-anchor="middle">23</text>
   </g>
-  <path class="map-donau" d="M36 128 C116 92 191 92 267 126 C348 162 433 157 604 96"/>
   <text class="map-note" x="36" y="478">Quelle: Stadt Wien Open Government Data · Bezirksgrenzen vereinfacht</text>
 </svg>
           </div>
           <div class="coverage-legend" aria-label="Alle 23 Wiener Bezirke">
-            <span class="district-chip primary">1. Innere Stadt</span><span class="district-chip primary">2. Leopoldstadt</span><span class="district-chip primary">3. Landstraße</span><span class="district-chip primary">4. Wieden</span><span class="district-chip primary">5. Margareten</span><span class="district-chip primary">6. Mariahilf</span><span class="district-chip primary">7. Neubau</span><span class="district-chip primary">8. Josefstadt</span><span class="district-chip primary">9. Alsergrund</span><span class="district-chip">10. Favoriten</span><span class="district-chip">11. Simmering</span><span class="district-chip">12. Meidling</span><span class="district-chip">13. Hietzing</span><span class="district-chip">14. Penzing</span><span class="district-chip">15. Rudolfsheim-Fünfhaus</span><span class="district-chip">16. Ottakring</span><span class="district-chip">17. Hernals</span><span class="district-chip">18. Währing</span><span class="district-chip">19. Döbling</span><span class="district-chip">20. Brigittenau</span><span class="district-chip">21. Floridsdorf</span><span class="district-chip">22. Donaustadt</span><span class="district-chip">23. Liesing</span>
+            <span class="district-chip primary">1. Innere Stadt</span><span class="district-chip primary">2. Leopoldstadt</span><span class="district-chip primary">3. Landstraße</span><span class="district-chip primary">4. Wieden</span><span class="district-chip primary">5. Margareten</span><span class="district-chip primary">6. Mariahilf</span><span class="district-chip primary">7. Neubau</span><span class="district-chip primary">8. Josefstadt</span><span class="district-chip primary">9. Alsergrund</span><span class="district-chip primary">10. Favoriten</span><span class="district-chip primary">11. Simmering</span><span class="district-chip primary">12. Meidling</span><span class="district-chip primary">13. Hietzing</span><span class="district-chip primary">14. Penzing</span><span class="district-chip primary">15. Rudolfsheim-Fünfhaus</span><span class="district-chip primary">16. Ottakring</span><span class="district-chip primary">17. Hernals</span><span class="district-chip primary">18. Währing</span><span class="district-chip primary">19. Döbling</span><span class="district-chip primary">20. Brigittenau</span><span class="district-chip primary">21. Floridsdorf</span><span class="district-chip primary">22. Donaustadt</span><span class="district-chip primary">23. Liesing</span>
           </div>
         </aside>
       </div>
@@ -504,7 +499,7 @@
 
   <!-- Full-width image band 2 -->
   <div class="img-band">
-    <img src="assets/oefs-conference-ready.webp" alt="" loading="lazy">
+    <img src="assets/oefs-meeting-prep.webp" alt="" loading="lazy">
     <div class="band-overlay">
       <p class="band-quote">Bevor Sie unterschreiben,<br>sehen Sie, wie wir arbeiten.<span>Probereinigung — unverbindlich und ohne Vertrag.</span></p>
     </div>
