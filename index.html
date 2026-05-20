@@ -85,6 +85,24 @@
     .hero-visual-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% center}
     .hero-visual-col::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.52) 70%,rgba(0,0,0,.74))}
 
+    /* ── Services overview ── */
+    .service-scope{background:var(--paper);border-bottom:1px solid var(--line-subtle)}
+    .service-scope-inner{padding:clamp(42px,6vw,70px) var(--pad)}
+    .scope-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:clamp(22px,5vw,64px);align-items:end;margin-bottom:clamp(24px,4vw,36px)}
+    .scope-head h2{margin:0;max-width:520px}
+    .scope-head .lede{margin:0;font-size:clamp(16px,1.7vw,19px)}
+    .scope-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+    .scope-card{background:var(--paper);padding:clamp(22px,3vw,30px);min-height:100%;display:flex;flex-direction:column;gap:18px}
+    .scope-meta{display:flex;justify-content:space-between;gap:14px;align-items:center;font-family:"Space Grotesk","DM Sans",sans-serif;font-size:11px;font-weight:650;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+    .scope-num{color:var(--signal)}
+    .scope-card h3{font-family:"Space Grotesk","DM Sans",sans-serif;font-size:clamp(20px,2vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.12;color:var(--ink)}
+    .scope-card p{color:var(--slate);font-size:15px;line-height:1.54;margin:0}
+    .scope-list{list-style:none;display:grid;gap:9px;margin-top:auto;padding-top:2px}
+    .scope-list li{position:relative;padding-left:18px;color:var(--steel);font-size:14px;line-height:1.38}
+    .scope-list li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--signal)}
+    .scope-extra{margin-top:clamp(18px,3vw,26px);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .scope-chip{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:var(--snow);color:var(--steel);font-size:13px;font-weight:600}
+
     /* ── Client strip ── */
     .client-strip{background:var(--snow);border-bottom:1px solid var(--line-subtle)}
     .strip-inner{display:flex;align-items:center;gap:clamp(18px,4vw,38px);padding:28px var(--pad);flex-wrap:wrap}
@@ -217,6 +235,9 @@
       .hero-actions .btn{width:100%;text-align:center}
       .hero-facts{flex-wrap:wrap;gap:14px}
       .pair{grid-template-columns:1fr;gap:24px}
+      .scope-head{grid-template-columns:1fr;align-items:start}
+      .scope-grid{grid-template-columns:1fr}
+      .scope-card{gap:14px}
       .pair-image{order:-1;aspect-ratio:16/10}
       .cards-3{grid-template-columns:1fr}
       .card-img{height:180px}
@@ -240,6 +261,7 @@
   <div class="shell nav-inner">
     <a class="nav-logo" href="#"><img src="assets/logo-oefs-dark.webp" alt="ÖFS"></a>
     <div class="nav-links">
+      <a href="#leistungen">Leistungen</a>
       <a href="#problem">Problem</a>
       <a href="#system">System</a>
       <a href="#referenzen">Referenzen</a>
@@ -254,8 +276,8 @@
   <div class="hero-grid">
     <div class="hero-copy-col">
       <div class="hero-eyebrow"><img src="assets/at-flag.webp" alt="">Büroreinigung Wien · gewerblich</div>
-      <h1>Eine Reinigung,<br>bei der Sie nicht<br>nachtelefonieren.</h1>
-      <p class="hero-sub">Für Unternehmen, bei denen <strong>verlässliche Abläufe</strong> mehr zählen als der günstigste Quadratmeterpreis. Mit fixem Objektleiter, eigenem Team und Probereinigung vor Vertragsstart.</p>
+      <h1>Büroreinigung,<br>die im Alltag<br>kein Thema ist.</h1>
+      <p class="hero-sub">Für Unternehmen, bei denen <strong>verlässliche Abläufe</strong> mehr zählen als der günstigste Quadratmeterpreis. Mit fixem Objektleiter, eigenem Team und Probereinigung vor Vertragsstart — ohne ständiges Nachtelefonieren.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#anfrage">Probereinigung anfragen</a>
         <a class="btn ghost" href="#system">So funktioniert's</a>
@@ -268,10 +290,67 @@
       </div>
     </div>
     <div class="hero-visual-col">
-      <img src="assets/oefs-nb2-hero-reception.webp" alt="ÖFS Mitarbeiter mit Reinigungswagen in einem modernen Bürobereich" loading="eager" fetchpriority="high" decoding="async">
+      <img src="assets/oefs-hero-gritty-corridor-cart.webp" alt="ÖFS Reinigungskraft mit Reinigungswagen in einem realen Büroflur nach Arbeitszeit" loading="eager" fetchpriority="high" decoding="async">
     </div>
   </div>
 </header>
+
+<!-- Leistungen -->
+<section class="service-scope" id="leistungen">
+  <div class="shell service-scope-inner">
+    <div class="scope-head">
+      <div>
+        <div class="kicker">Leistungen</div>
+        <h2>Drei Bereiche, ein sauberer Büro-Alltag.</h2>
+      </div>
+      <p class="lede">Direkt aus dem ÖFS-Leistungsumfang für Wiener Büros: fixe Frequenz, dokumentierter Reinigungsplan und klare Zuständigkeit — nicht nur „einmal grob durchwischen“.</p>
+    </div>
+    <div class="scope-grid" aria-label="ÖFS Leistungsbereiche Büroreinigung">
+      <article class="scope-card">
+        <div class="scope-meta"><span class="scope-num">01</span><span>Täglich · Mo–Fr</span></div>
+        <h3>Arbeitsplätze, Empfang & Besprechung</h3>
+        <p>Für Bereiche, die Kunden, Bewerber und Mitarbeiter sofort wahrnehmen — nach Bürozeit, unauffällig und rückstandsfrei.</p>
+        <ul class="scope-list">
+          <li>Schreibtische, Telefone, Tastaturen mit Wischdesinfektion</li>
+          <li>Empfangstresen, Besprechungsräume, Wartebereich</li>
+          <li>Glastüren & Trennwände streifenfrei</li>
+          <li>Müll, Papierkörbe und Wertstofftrennung</li>
+        </ul>
+      </article>
+      <article class="scope-card">
+        <div class="scope-meta"><span class="scope-num">02</span><span>Täglich · Mo–Fr</span></div>
+        <h3>Küchen & Aufenthaltsbereiche</h3>
+        <p>Teeküchen sind oft der erste Ort, an dem Hygieneprobleme auffallen. ÖFS hält diese Zonen planbar im Griff.</p>
+        <ul class="scope-list">
+          <li>Arbeitsflächen, Spüle, Wasserkocher-Bereich</li>
+          <li>Mikrowelle innen, Kaffeemaschine außen</li>
+          <li>Boden, Türgriffe, häufig berührte Oberflächen</li>
+          <li>Müll, Recycling, Geschirrtücher auffüllen</li>
+        </ul>
+      </article>
+      <article class="scope-card">
+        <div class="scope-meta"><span class="scope-num">03</span><span>Flexibel</span></div>
+        <h3>Sanitär, Böden & Glasflächen</h3>
+        <p>Die Flächen, die am schnellsten beanstandet werden, bekommen besondere Aufmerksamkeit — angepasst an Belag und Objekt.</p>
+        <ul class="scope-list">
+          <li>WCs, Urinale, Waschbecken mit Hygiene-Desinfektion</li>
+          <li>Spiegel, Armaturen, Seifenspender</li>
+          <li>Auffüllen von Seife, Papier, Hygieneartikel</li>
+          <li>Bodenpflege je nach Belag</li>
+        </ul>
+      </article>
+    </div>
+    <div class="scope-extra" aria-label="Zusatzleistungen">
+      <span class="scope-chip">Bürostuhlreinigung</span>
+      <span class="scope-chip">Polsterreinigung</span>
+      <span class="scope-chip">Bildschirmreinigung</span>
+      <span class="scope-chip">Kühlschrank-Innenreinigung</span>
+      <span class="scope-chip">Glasreinigung außen</span>
+      <span class="scope-chip">Teppich-Tiefenreinigung</span>
+      <span class="scope-chip">Steinboden-Aufbereitung</span>
+    </div>
+  </div>
+</section>
 
 <!-- Client logos -->
 <section class="client-strip">
