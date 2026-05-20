@@ -86,10 +86,6 @@ def render_rows(rows):
     return ''.join(f'<article class="service-row"><h3>{escape(t)}</h3><p>{escape(p)}</p></article>' for t,p in rows)
 
 def render(slug, v):
-    chips = ''.join(
-        f'<a class="intent-chip {"active" if k==slug else ""}" href="../{k}/">{variants[k]["route"]} Linz</a>'
-        for k in ['bueroreinigung-linz','unterhaltsreinigung-linz','reinigungsfirma-linz']
-    )
     return f'''<!doctype html>
 <html lang="de">
 <head>
@@ -119,7 +115,6 @@ def render(slug, v):
   </section>
 
   <section class="proofstrip"><div class="shell"><div class="prooftext">{escape(v['proof_line'])}</div><div class="logos"><img src="../assets/logo-tabakfabrik-live.webp" alt="Tabakfabrik"><img src="../assets/logo-haribo-live.webp" alt="Haribo"><img src="../assets/logo-viadonau-live.webp" alt="via donau"><img src="../assets/logo-nike-live.webp" alt="Nike"><img src="../assets/logo-barmherzige.webp" alt="Barmherzige"></div></div></section>
-  <div class="intent-nav"><div class="shell">{chips}</div></div>
 
   <main>
     <section class="section white">
