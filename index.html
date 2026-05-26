@@ -61,8 +61,8 @@
     .nav-cta:hover{background:var(--signal-dim)}
 
     /* ── Hero ── */
-    .hero{background:var(--charcoal);color:#fff;position:relative;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(440px,1.1fr);gap:0;min-height:620px}
+    .hero{background:var(--paper);color:#fff;position:relative;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(440px,1.1fr);gap:0;min-height:620px;max-width:var(--max);margin:0 auto;background:var(--charcoal)}
     .hero-copy-col{display:flex;flex-direction:column;justify-content:center;padding:clamp(50px,8vw,90px) var(--pad) clamp(50px,7vw,80px);position:relative;z-index:2}
     .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:"Space Grotesk","DM Sans",sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.62);margin-bottom:20px}
     .hero-eyebrow img{border-radius:3px;width:20px;height:20px;object-fit:cover}
@@ -104,8 +104,8 @@
     .scope-chip{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:var(--snow);color:var(--steel);font-size:13px;font-weight:600}
 
     /* ── Client strip ── */
-    .client-strip{background:var(--snow);border-bottom:1px solid var(--line-subtle)}
-    .strip-inner{display:flex;align-items:center;gap:clamp(18px,4vw,38px);padding:28px var(--pad);flex-wrap:wrap}
+    .client-strip{background:var(--paper);border-bottom:1px solid var(--line-subtle)}
+    .strip-inner{display:flex;align-items:center;gap:clamp(18px,4vw,38px);padding:28px var(--pad);flex-wrap:wrap;width:100%;max-width:var(--max);margin:0 auto;background:var(--snow)}
     .strip-label{font-family:"Space Grotesk","DM Sans",sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);white-space:nowrap;flex-shrink:0}
     .strip-logos{display:flex;gap:clamp(12px,2.5vw,28px);align-items:center;flex-wrap:wrap}
     .strip-logos img{height:clamp(20px,2.5vw,28px);width:auto;opacity:.48;filter:grayscale(1);transition:opacity .2s}
@@ -113,7 +113,8 @@
 
     /* ── Section ── */
     .section{padding:clamp(64px,8vw,100px) 0}
-    .section-dark{background:var(--charcoal);color:#fff}
+    .section-dark{background:var(--charcoal);color:#fff;max-width:var(--max);margin-left:auto;margin-right:auto}
+    .panel-section{max-width:var(--max);margin-left:auto;margin-right:auto}
     .section-dark h2{color:#fff}
     .section-dark .lede{color:rgba(255,255,255,.64)}
     .section-dark .section-num{color:rgba(255,255,255,.18)}
@@ -125,7 +126,7 @@
     .pair-image.shift-up{order:-1}
 
     /* ── Full image band ── */
-    .img-band{position:relative;height:clamp(280px,40vw,460px);overflow:hidden}
+    .img-band{position:relative;height:clamp(280px,40vw,460px);overflow:hidden;width:100%;max-width:var(--max);margin:0 auto}
     .img-band img{width:100%;height:100%;object-fit:cover}
     .img-band .band-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.65) 60%,rgba(0,0,0,.72));display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--pad)}
     .img-band .band-quote{font-family:"Space Grotesk","DM Sans",sans-serif;font-size:clamp(24px,3.5vw,42px);font-weight:600;color:#fff;letter-spacing:-.02em;max-width:700px;line-height:1.15}
@@ -165,7 +166,7 @@
     .section-dark .stat-label{color:rgba(255,255,255,.56)}
 
     /* ── Service area ── */
-    .map-section{background:var(--charcoal);padding:clamp(70px,9vw,110px) 0;color:#fff;overflow:hidden}
+    .map-section{background:var(--charcoal);padding:clamp(70px,9vw,110px) 0;color:#fff;overflow:hidden;max-width:var(--max);margin-left:auto;margin-right:auto}
     .map-section h2{color:#fff;max-width:660px}
     .map-section .lede{color:rgba(255,255,255,.66)}
     .map-section .section-num{color:rgba(255,255,255,.18)}
@@ -199,7 +200,7 @@
     .district-tooltip span{display:block;margin-top:3px;color:#b9d8f6;font-weight:600;font-size:12px}
 
     /* ── Form ── */
-    .form-section{padding:clamp(64px,8vw,100px) 0;background:var(--charcoal);color:#fff}
+    .form-section{padding:clamp(64px,8vw,100px) 0;background:var(--charcoal);color:#fff;max-width:var(--max);margin-left:auto;margin-right:auto}
     .form-section h2{color:#fff}
     .form-section .lede{color:rgba(255,255,255,.64)}
     .form-section .section-num{color:rgba(255,255,255,.18)}
@@ -438,7 +439,7 @@
   </section>
 
   <!-- Compare: side by side panels with visual treatment -->
-  <section class="section" style="background:var(--snow)">
+  <section class="section panel-section" style="background:var(--snow)">
     <div class="shell"><span class="section-num">03</span>
       <div class="kicker">Der Unterschied</div>
       <h2>Gewerbliche Reinigung, die funktioniert – statt jede Woche ein neues Thema</h2>
