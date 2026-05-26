@@ -221,10 +221,14 @@
     .footer{padding:clamp(30px,5vw,50px) 0;background:var(--charcoal);color:rgba(255,255,255,.44);font-size:13px;line-height:1.6;border-top:1px solid rgba(255,255,255,.08)}
     .footer a{color:rgba(255,255,255,.64)}
 
+    /* ── Conversion helpers ── */
+    .mobile-sticky-cta{display:none}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
     /* ── Mobile ── */
     @media (max-width:860px){
       .nav-links{display:none}
-      .nav-cta{font-size:12px;padding:8px 14px}
+      .nav-cta{display:none}
       .hero-grid{grid-template-columns:1fr;min-height:auto}
       .hero-visual-col{order:-1;min-height:280px;max-height:360px}
       .hero-visual-col::after{background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.42) 80%,rgba(0,0,0,.62))}
@@ -251,6 +255,10 @@
       .form-grid{grid-template-columns:1fr}
       .btn.submit{width:100%;justify-self:stretch;text-align:center}
       .section-num{font-size:clamp(36px,10vw,48px)}
+      body{padding-bottom:78px}
+      .mobile-sticky-cta{position:fixed;left:14px;right:14px;bottom:12px;z-index:70;display:flex;align-items:center;justify-content:center;min-height:54px;border-radius:8px;background:var(--signal);color:#fff;text-decoration:none;font:650 15px/1 "Space Grotesk","DM Sans",sans-serif;box-shadow:0 12px 28px rgba(0,0,0,.24);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(18px);transition:opacity .18s ease,visibility .18s ease,transform .18s ease}
+      .mobile-sticky-cta.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+      .mobile-sticky-cta:focus-visible{outline:3px solid rgba(255,255,255,.72);outline-offset:3px}
     }
   </style>
 </head>
@@ -280,7 +288,7 @@
       <p class="hero-sub">Für Unternehmen, bei denen <strong>verlässliche Abläufe</strong> mehr zählen als der günstigste Quadratmeterpreis. Mit fixem Objektleiter, eigenem Team und Probereinigung vor Vertragsstart — ohne ständiges Nachtelefonieren.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#anfrage">Probereinigung anfragen</a>
-        <a class="btn ghost" href="#system">So funktioniert's</a>
+        <a class="btn ghost" href="#system">So arbeitet ÖFS</a>
       </div>
       <p class="hero-micro">Unverbindlich · Rückmeldung innerhalb von 24h · nur gewerbliche Objekte</p>
       <div class="hero-facts">
@@ -587,11 +595,19 @@
       <h2>Passt ÖFS zu Ihrem Objekt?</h2>
       <p class="lede">Starten Sie mit einer Probereinigung. Die konkrete Durchführung stimmen wir individuell mit Ihnen ab. Rückmeldung innerhalb von 24 Stunden.</p>
       <form class="form-grid" onsubmit="event.preventDefault();this.querySelector('.form-status').textContent='Danke — Ihre Anfrage ist bei uns eingegangen. ÖFS meldet sich innerhalb von 24h.'">
-        <div class="field"><label>Unternehmen</label><input placeholder="z.B. Muster GmbH" required></div>
-        <div class="field"><label>Ansprechpartner</label><input placeholder="Vor- und Nachname" required></div>
-        <div class="field"><label>Telefon oder E-Mail</label><input type="email" placeholder="kontakt@firma.at" required></div>
-        <div class="field"><label>Objektart</label><select><option>Büro</option><option>Praxis</option><option>Geschäftsfläche</option><option>Produktion / Lager</option><option>Sonstiges Gewerbeobjekt</option></select></div>
-        <div class="field full"><label>Wo merkt man aktuell den Aufwand?</label><textarea placeholder="z.B. Nachtelefonieren, wechselnde Teams, Reklamationen, Vertretung bei Ausfall..."></textarea></div>
+        <input type="hidden" name="utm_source" data-attribution="utm_source">
+        <input type="hidden" name="utm_medium" data-attribution="utm_medium">
+        <input type="hidden" name="utm_campaign" data-attribution="utm_campaign">
+        <input type="hidden" name="utm_term" data-attribution="utm_term">
+        <input type="hidden" name="utm_content" data-attribution="utm_content">
+        <input type="hidden" name="gclid" data-attribution="gclid">
+        <input type="hidden" name="gbraid" data-attribution="gbraid">
+        <input type="hidden" name="wbraid" data-attribution="wbraid">
+        <div class="field"><label for="company">Unternehmen</label><input id="company" name="company" autocomplete="organization" placeholder="z.B. Muster GmbH" required></div>
+        <div class="field"><label for="contact_name">Ansprechpartner</label><input id="contact_name" name="contact_name" autocomplete="name" placeholder="Vor- und Nachname" required></div>
+        <div class="field"><label for="contact_value">Telefon oder E-Mail</label><input id="contact_value" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="+43 664 ... oder kontakt@firma.at" required></div>
+        <div class="field"><label for="object_type">Objektart</label><select id="object_type" name="object_type"><option>Büro</option><option>Praxis</option><option>Kanzlei</option><option>Geschäftsfläche</option><option>Produktion / Lager</option><option>Sonstiges Gewerbeobjekt</option></select></div>
+        <div class="field full"><label for="current_effort">Wo merkt man aktuell den Aufwand?</label><textarea id="current_effort" name="current_effort" placeholder="z.B. Nachtelefonieren, wechselnde Teams, Reklamationen, Vertretung bei Ausfall..."></textarea></div>
         <button class="btn submit" type="submit">Anfrage senden</button>
         <p class="form-note form-status">ÖFS verwendet Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage. Keine Weitergabe an Dritte.</p>
       </form>
@@ -607,7 +623,31 @@
   </div>
 </footer>
 
+<a class="mobile-sticky-cta" href="#anfrage">Probereinigung anfragen</a>
+
 <script>
+  (function(){
+    var keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'];
+    var params = new URLSearchParams(window.location.search);
+    keys.forEach(function(key){
+      var incoming = params.get(key);
+      if (incoming) localStorage.setItem('oefs_' + key, incoming);
+      var value = incoming || localStorage.getItem('oefs_' + key) || '';
+      document.querySelectorAll('[data-attribution="' + key + '"]').forEach(function(input){ input.value = value; });
+    });
+  })();
+
+  (function(){
+    var sticky = document.querySelector('.mobile-sticky-cta');
+    if (!sticky) return;
+    function toggleSticky(){
+      sticky.classList.toggle('is-visible', window.innerWidth <= 860 && window.scrollY > 520);
+    }
+    window.addEventListener('scroll', toggleSticky, {passive:true});
+    window.addEventListener('resize', toggleSticky);
+    toggleSticky();
+  })();
+
   (function(){
     var panel = document.querySelector('.real-map-panel');
     var tooltip = document.getElementById('districtTooltip');
